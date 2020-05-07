@@ -58,10 +58,10 @@ const StyledSelection = styled.select`
 const SelectableField = ({ readOnly = true, value, setter, options = [], fieldSyncTime }) => {
   const [v, setV] = React.useState(value) // inner state
   React.useEffect(
-      () => {
-        setV(value) // overwrite inner state
-      }, [fieldSyncTime]
-    )
+    () => {
+      setV(value) // overwrite inner state
+    }, [fieldSyncTime]
+  )
   const onChange = e => {
     setV(e.target.value)
     setter(e.target.value === 'true') // sync with outer
@@ -69,12 +69,12 @@ const SelectableField = ({ readOnly = true, value, setter, options = [], fieldSy
   return (
     <StyledSelection disabled={readOnly} value={v} onChange={onChange}>
       {
-          options.map(
-            option => (
-              <option key={option.key} value={option.value}>{option.key}</option>
-            )
+        options.map(
+          option => (
+            <option key={option.key} value={option.value}>{option.key}</option>
           )
-        }
+        )
+      }
     </StyledSelection>
   )
 }
@@ -116,7 +116,7 @@ const EditableDate = ({ value = new Date(), fieldSyncTime, setter, readOnly, lan
       calendarIcon={null}
       clearIcon={null}
       disableClock
-      locale={'zh-TW'}
+      locale='zh-TW'
       format={langKey === 'zhtw' ? 'y年MM月dd日 HH:mm' : 'y/MM/dd HH:mm'}
       showLeadingZeros
     />
