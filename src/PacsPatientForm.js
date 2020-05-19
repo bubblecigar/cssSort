@@ -35,7 +35,7 @@ const StyledInput = styled.input`
   pointer-events: ${props => props.readOnly ? 'none' : 'initial'}
 `
 
-const EditableField = React.forwardRef(({ readOnly = false, value = '', onChange }, ref) => {
+const EditableField = React.forwardRef(({ placeholder = '請輸入', readOnly = false, value = '', onChange }, ref) => {
   const [v, setV] = React.useState(value) // inner state
   const _onChange = e => {
     setV(e.target.value)
@@ -59,7 +59,7 @@ const EditableField = React.forwardRef(({ readOnly = false, value = '', onChange
       readOnly={readOnly}
       value={v}
       onChange={_onChange}
-      placeholder='請輸入'
+      placeholder={placeholder}
     />
   )
 })
