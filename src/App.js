@@ -19,12 +19,14 @@ const Row = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  font-size: 18px;
 `
 const ActivableRow = styled(Row)`
   &:hover {
     background-color: rgba(49, 34, 210, 0.1);
     cursor: pointer;
   }
+  font-size: 18px;
 `
 const Item = styled.div`
   flex-basis: ${props => props.basis || 0};
@@ -61,9 +63,12 @@ function App () {
 }
 
 const Input = styled.textarea`
+  font-size: 18px;
   width: 100%;
   height: 300px;
   padding: 5px;
+  outline: none;
+  font-family: sans-serif;
 `
 
 export default App
